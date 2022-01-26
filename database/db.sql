@@ -1,7 +1,3 @@
-CREATE DATABASE dblinks;
-
-USE dblinks;
-
 -- TABLE USER
 -- all pasword wil be encrypted using SHA2
 CREATE TABLE users (
