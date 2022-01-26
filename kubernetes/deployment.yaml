@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: links
+spec:
+  selector:
+    matchLabels:
+      app: links
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: links
+    spec:
+      containers:
+      - env:
+        - name: DATABASE_HOST
+          value: rm-j6ciy544037a6c4entf.mysql.rds.aliyuncs.com
+        - name: DATABASE_NAME
+          value: dblinks
+        - name: DATABASE_USER
+          value: oam
+        - name: DATABASE_PASSWORD
+          value: affdfdfdffdGfaked
+        - name: PORT
+          value: "80"
+        image: oamdev/nodejs-mysql-links:v0.0.1
+        imagePullPolicy: Always
+        name: links
+   

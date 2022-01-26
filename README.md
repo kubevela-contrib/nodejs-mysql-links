@@ -13,6 +13,21 @@ npm run build
 npm start
 ```
 
+### Run in Kubernetes
+
+```shell
+$ kubectl apply -f kubernetes/deployment.yaml
+
+$ kubectl get pod
+NAME                          READY   STATUS      RESTARTS   AGE
+links-7dcfd559bb-qrpf6        1/1     Running     0          128m
+
+$ sudo kubectl port-forward pod/links-7dcfd559bb-qrpf6 80:80
+```
+
+Visit it at http://127.0.0.1
+
+
 ## File Structure
 
 - database, it the folder with all the sql queries, you can use to recreate the database for this application
